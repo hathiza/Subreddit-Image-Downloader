@@ -15,5 +15,5 @@ https://ENDPOINT?subreddit=mildlyinteresting
 ```
 
 ```
-https://ENDPOINT?subreddit=mildlyinteresting&mode=new|limit=20
+https://ENDPOINT?subreddit=mildlyinteresting&mode=new&limit=20
 ```
