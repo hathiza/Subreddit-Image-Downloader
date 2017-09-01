@@ -8,12 +8,12 @@ module.exports = function(context, req, res) {
     var subreddit = context.data.subreddit || "pics";
     var mode = context.data.mode || "hot";
     var limit = context.data.number || "10";
-
-    fetchImages(subreddit, mode, limit, res);
+    var after = context.data.after || "";
+    fetchImages(subreddit, mode, limit, after, res);
 }
 
-function fetchImages(subreddit, mode, limit, res) {
-    var subredditURL = `https://www.reddit.com/r/${subreddit}/${mode}/.json?limit=${limit}`;
+function fetchImages(subreddit, mode, limit, after, res) {
+    var subredditURL = `https://www.reddit.com/r/${subreddit}/${mode}/.json?after=${after}&limit=${limit}`;
     var opts = {
         uri: subredditURL,
         headers: {
